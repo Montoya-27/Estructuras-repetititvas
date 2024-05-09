@@ -1,31 +1,23 @@
 /******************************************************************************
 
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
-
 #include <iostream>
 using namespace std;
-int main()
-{
-    char opcion; 
-    char variable='x';
+int main(){
+    int i, numero, factorial = 1;
     
-    do 
+    cout << "ingrese un numero";
+    cin >> numero;
+    
+    for (int i = 1; i <= numero; i++)
     {
-    cout <<"Menu"<<"\n";
-    cout <<"A Hamburguesa"<<"\n";
-    cout <<"B Polo campero"<<"\n";
-    cout <<"C Camarones"<<"\n";
-    cout <<"Seleccione una opcion:"<<"\n";
-    cin >> opcion;
-    cout <<"opcion seleccionada"<< opcion <<"\n";
-    
+        factorial = factorial * i; 
     }
-    while (opcion !=variable);
-    
+    cout << "el factorial de es:" <<factorial;
     return 0;
 }
-
