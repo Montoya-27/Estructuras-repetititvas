@@ -1,23 +1,74 @@
 /******************************************************************************
 
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
 
 *******************************************************************************/
+
 #include <iostream>
 using namespace std;
-int main(){
-    int i, numero, factorial = 1;
+int main() {
     
-    cout << "ingrese un numero";
-    cin >> numero;
+    int opcioUsuario;
+    int opcionComputadora;
     
-    for (int i = 1; i <= numero; i++)
-    {
-        factorial = factorial * i; 
+    std::cout <<"Bienvenido al juego Piedra, Papel o Tijera!"<< std::endl;
+    std::cout <<"Seleccione su jugada:"<< std::endl;
+    std::cout <<"1. Piedra"<< std::endl;
+    std::cout <<"2. Papel"<< std::endl;
+    std::cout <<"3. Tijera"<< std::endl;
+    std::cout <<"Su eleccion:";
+    std::cin >> opcionUsuario;
+    
+    //Se utiliza el tiempo del sistema para obtener un valor "aleatorio"
+    opcionComputadora = (static_cast<int>(time(0))% 3)+1;
+    
+    std::cout <<"La computadora elige:"<< opcionComputadora << std::endl;
+    
+    switch(opcionUsuario){
+        case 1:
+        switch(opcionComputadora){
+        case 1:
+        std::cout<<"¡Empate!" <<std::endl;
+        break;
+        case 2:
+        std::cout<<"¡La computadora gana!" <<std::endl;
+        break;
+        case 3:
+        std::cout<<"¡Ganaste!" <<std::endl;
+        break;
+        }
+        break;
+        case 2:
+        switch(opcionComputadora){
+        case 1:
+        std::cout<<"¡Gnaste!" <<std::endl;
+        break;
+        case 2:
+        std::cout<<"¡Empate!" <<std::endl;
+        break;
+        case 3:
+        std::cout<<"¡La computadora gana!" <<std::endl;
+        break;
+        }
+        break;
+        case 3:
+        switch(opcionComputadora){
+        case 1:
+        std::cout<<"¡La computadora gana!" <<std::endl;
+        break;
+        case 2:
+        std::cout<<"¡Ganaste!" <<std::endl;
+        break;
+        case 3:
+        std::cout<<"¡Empate!" <<std::endl;
+        break;
+        }
+        break;
+        default:
+        std::cout<<"Opcion invalida. Por favor seleccione 1, 2 o 3." <<std::endl;
+        break;
     }
-    cout << "el factorial de es:" <<factorial;
-    return 0;
+     return 0;
 }
